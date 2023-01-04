@@ -36,21 +36,7 @@ classdef ImageCapturer < handle
             end
         end
         
-        function framei = get_frame(self)
-            framei = zeros(self.sizex,self.sizey);
-            elapsed_time = 0;
-            while elapsed_time < self.seconds_per_frame
-                self.get_image()
-                framei = framei+self.current_image;
-            end
-        end
-        
-       function start(self)
-           for i = 1:self.nframes
-                framei = self.get_frame();
-                self.this_trial(i,:,:) = framei;
-           end
-        end
+        function ge
         
     end
 end
