@@ -9,7 +9,7 @@ start(vid)
 trigger(vid)
 isrunning(vid)
 delete(vid)
-FramesAcquired = FramesPerTrigger * (TriggerRepeat + 1)
+FramesAcquired = FramesPerTrigger * (TriggerRepeat + 1);
 %%
 preview(vid)
 stoppreview(vid)
@@ -33,9 +33,10 @@ deviceInfo = d{1, "DeviceInfo"}
 
 %%
 dq = daq("ni");
-dq.Rate = 8000;
-addoutput(dq, "Dev1", "ao0", "Voltage");
+dq.Rate = 2000;
 addoutput(dq, "Dev1", "ao1", "Voltage");
+%%
+outputSignal =  sin(linspace(0,10*pi,2000)')+5;
 write(dq, outputSignal)
 
 %%
