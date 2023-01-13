@@ -17,3 +17,24 @@ triggerconfig(vid, 'Manual');
 vid.FramesPerTrigger = 1;
 start(vid);
 trigger(vid);
+%%
+d = daqlist;
+deviceInfo = d{1, "DeviceInfo"}
+
+%%
+dq = daq("ni");
+dq.Rate = 8000;
+addoutput(dq, "Dev1", "ao0", "Voltage");
+addoutput(dq, "Dev1", "ao1", "Voltage");
+write(dq, outputSignal)
+
+%%
+d{1,'DeviceInfo'}
+
+
+
+
+
+
+
+
