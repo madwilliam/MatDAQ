@@ -23,7 +23,7 @@ deviceInfo = d{1, "DeviceInfo"}
 
 %%
 dq = daq("ni");
-dq.Rate = 8000;
+dq.Rate = 1000;
 addoutput(dq, "Dev1", "ao0", "Voltage");
 addoutput(dq, "Dev1", "ao1", "Voltage");
 write(dq, outputSignal)
