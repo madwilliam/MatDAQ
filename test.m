@@ -4,13 +4,23 @@ vid = videoinput('ni', 1,'img0');
 data = getdata(vid);
 imaqhwinfo(vid)
 triggerconfig(vid, 'Manual')
-vid.FramesPerTrigger = 1;
+vid.FramesPerTrigger = 20;
 start(vid)
 trigger(vid)
 isrunning(vid)
 delete(vid)
 FramesAcquired = FramesPerTrigger * (TriggerRepeat + 1)
-
+%%
+preview(vid)
+stoppreview(vid)
+%%
+capturer =  ImageCapturer();
+image = capturer.get_image(20);
+imagesc(image)
+%%
+start(vid)
+trigger(vid)
+frame = getdata(vid);
 %%
 vid = videoinput('ni');
 triggerconfig(vid, 'Manual');
