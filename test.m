@@ -30,7 +30,6 @@ trigger(vid);
 %%
 d = daqlist;
 deviceInfo = d{1, "DeviceInfo"}
-
 %%
 dq = daq("ni");
 dq.Rate = 2000;
@@ -38,14 +37,5 @@ addoutput(dq, "Dev1", "ao1", "Voltage");
 %%
 outputSignal =  sin(linspace(0,10*pi,2000)')+5;
 write(dq, outputSignal)
-
 %%
 d{1,'DeviceInfo'}
-
-
-
-
-
-
-
-
