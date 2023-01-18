@@ -36,6 +36,8 @@ dq = daq("ni");
 dq.Rate = 1000;
 addoutput(dq, "Dev1", "ao0", "Voltage");
 addoutput(dq, "Dev1", "ao1", "Voltage");
+%%
+outputSignal =  sin(linspace(0,10*pi,2000)')+5;
 write(dq, outputSignal)
 
 %%
