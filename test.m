@@ -9,7 +9,7 @@ start(vid)
 trigger(vid)
 isrunning(vid)
 delete(vid)
-FramesAcquired = FramesPerTrigger * (TriggerRepeat + 1)
+FramesAcquired = FramesPerTrigger * (TriggerRepeat + 1);
 %%
 preview(vid)
 stoppreview(vid)
@@ -29,7 +29,7 @@ start(vid);
 trigger(vid);
 %%
 d = daqlist;
-deviceInfo = d{1, "DeviceInfo"}
+deviceInfo = d{1, "DeviceInfo"};
 
 %%
 dq = daq("ni");
